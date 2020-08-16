@@ -1,5 +1,7 @@
 var request = new XMLHttpRequest();
 var newDetails = document.getElementById("details");
+var products = [];
+
 request.onreadystatechange = function () {
 
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
@@ -47,9 +49,16 @@ request.onreadystatechange = function () {
                 newCard.appendChild(newCardBody);
                 newCard.appendChild(newImage);
                 newDetails.appendChild(newCard);
+
+                newAddToCart.addEventListener("click", function() {
+                    products.push(element._id);
+                    localStorage.setItem("AddedToCart", products);
+                    console.log("clicked!");
+                });
             }
 
         }
+
     }
 
 }
