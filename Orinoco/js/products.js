@@ -10,6 +10,12 @@ request.onreadystatechange = function () {
             
             const element = response[index];
             
+            const newId = document.createElement("a");
+            newId.classList.add("card-link");
+            const newQuery = "./pages/produit-details.html?" + element._id;
+            newId.textContent = "Détails"
+            newId.setAttribute("href", newQuery);
+
             const newCard = document.createElement("div");
             newCard.classList.add("card");
             
@@ -33,8 +39,8 @@ request.onreadystatechange = function () {
             newCardBody.appendChild(newCardDescription);
             newCard.appendChild(newCardBody);
             newCard.appendChild(newImage);
+            newCard.appendChild(newId);
             productsElement.appendChild(newCard);
-            
         }
     }
 
