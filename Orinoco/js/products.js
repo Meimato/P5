@@ -13,7 +13,7 @@ request.onreadystatechange = function () {
             const newId = document.createElement("a");
             newId.classList.add("card-link");
             const newQuery = "./pages/produit-details.html?" + element._id;
-            newId.textContent = "Détails"
+            newId.textContent = "Détails";
             newId.setAttribute("href", newQuery);
 
             const newCard = document.createElement("div");
@@ -35,10 +35,15 @@ request.onreadystatechange = function () {
             newCardDescription.classList.add("card-text");
             newCardDescription.textContent = element.description;
 
+            const newPrice = document.createElement("p");
+            newPrice.classList.add("card-text");
+            newPrice.textContent = element.price / 100 + "€";
+
             newCardBody.appendChild(newCardTitle);
             newCardBody.appendChild(newCardDescription);
             newCard.appendChild(newCardBody);
             newCard.appendChild(newImage);
+            newCard.appendChild(newPrice);
             newCard.appendChild(newId);
             productsElement.appendChild(newCard);
         }
