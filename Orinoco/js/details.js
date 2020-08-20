@@ -1,6 +1,33 @@
+class ProductManager {
+
+    constructor() {
+        var products = [];
+    }
+
+    static add( item ) {
+        products.push( item );
+        window.localStorage.setItem( "AddedToCart", JSON.stringify(products) );
+        console.log("Added")
+    }
+
+    static remove( item ) {
+        if ( products.indexOf( item ) == -1 ) {
+            return "Product not found";
+        } else {
+            window.localStorage.removeItem( [ products.indexOf( item ) ] );
+        }
+
+    }
+
+    static clear() {
+        window.localStorage.clear();
+    }
+
+}
+
+var myProductManager = new ProductManager();
 var request = new XMLHttpRequest();
 var newDetails = document.getElementById("details");
-var products = [];
 
 request.onreadystatechange = function () {
 
@@ -51,9 +78,7 @@ request.onreadystatechange = function () {
                 newDetails.appendChild(newCard);
 
                 newAddToCart.addEventListener("click", function() {
-                    products.push(element._id);
-                    localStorage.setItem("AddedToCart", products);
-                    console.log("clicked!");
+                    ProductManager.add( element._id );
                 });
             }
 

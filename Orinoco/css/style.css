@@ -1,3 +1,21 @@
 .my-font {
     font-family: 'Merienda One', cursive;
 }
+
+.fa-shopping-cart {
+    background-image: linear-gradient(135deg, rgba(214,130,52,1) 0%, rgba(143,91,254,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.jumbotron {
+    background-color: #f3e9f1;
+}
+
+#products, #details {
+    margin-bottom: 4rem;
+}
+
+.card {
+    margin: 0.25rem;
+}
