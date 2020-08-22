@@ -1,31 +1,3 @@
-class ProductManager {
-
-    constructor() {
-        var products = [];
-    }
-
-    static add( item ) {
-        products.push( item );
-        window.localStorage.setItem( "AddedToCart", JSON.stringify(products) );
-        console.log("Added")
-    }
-
-    static remove( item ) {
-        if ( products.indexOf( item ) == -1 ) {
-            return "Product not found";
-        } else {
-            window.localStorage.removeItem( [ products.indexOf( item ) ] );
-        }
-
-    }
-
-    static clear() {
-        window.localStorage.clear();
-    }
-
-}
-
-var myProductManager = new ProductManager();
 var request = new XMLHttpRequest();
 var newDetails = document.getElementById("details");
 
@@ -35,21 +7,21 @@ request.onreadystatechange = function () {
         var response = JSON.parse(this.responseText);
 
         var myQuery = location.search.substr(1);
+        
+        for (let index = 0; index < response.length; index ++) {
 
-        for (let index = 0; index < response.length; index++ ) {
-
-            if ( response[index]._id == myQuery) {
+            if (response[index]._id == myQuery) {
 
                 const element = response[index];
 
                 const newCard = document.createElement("div");
                 newCard.classList.add("card");
-                
+
                 const newImage = document.createElement("img");
                 newImage.classList.add("card-img-top");
                 newImage.setAttribute("src", element.imageUrl);
                 newImage.setAttribute("alt", element.description);
-                
+
                 const newCardBody = document.createElement("div");
                 newCardBody.classList.add("card-body");
 
@@ -77,8 +49,8 @@ request.onreadystatechange = function () {
                 newCard.appendChild(newImage);
                 newDetails.appendChild(newCard);
 
-                newAddToCart.addEventListener("click", function() {
-                    ProductManager.add( element._id );
+                newAddToCart.addEventListener("click", function () {
+                    myProductManager.addProduct(element);
                 });
             }
 

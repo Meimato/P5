@@ -6,7 +6,7 @@ request.onreadystatechange = function () {
 
         const myCartElement = document.getElementById("panier");
         const newBox = document.createElement("div");
-        const s = window.localStorage.getItem("AddedToCart");
+        const s = myProductManager.displayProducts();
         myCartElement.appendChild(newBox);
         console.log(s);
     }
