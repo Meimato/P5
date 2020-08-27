@@ -50,7 +50,7 @@ request.onreadystatechange = function () {
                 newDetails.appendChild(newCard);
 
                 newAddToCart.addEventListener("click", function () {
-                    myProductManager.addProduct(element);
+                    productManager.addProduct(element);
                 });
             }
 

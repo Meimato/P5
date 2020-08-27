@@ -1,36 +1,26 @@
-let products;
-
-class ProductManager { 
+const productManager = { 
     
-    constructor(products) {
-        this.products = new Array();
-    }
+    products: [],
 
-    displayProducts() {
+    displayProducts: function() {
         return JSON.parse(localStorage.getItem("AddedToCart"));
-    }
+    },
 
-    addProduct(item) {
-        // Creating a product
-        let newProd = new Product(item);
-        console.log(newProd);
+    addProduct: function(item) {
         // Pushing its ID into an array
-        this.products.push(newProd.getId());
-        console.log(newProd.getId());
+        this.products.push(item._id);
+        console.log(item._id);
         // Setting the localStorage with the array of products
         localStorage.setItem("AddedToCart", JSON.stringify(this.products) );
         console.log("Added")
-    }
+    },
 
-    removeProduct(item) {
+    removeProduct: function(item) {
         localStorage.removeItem(item);
-    }
+    },
 
-    clearStorage() {
+    clearStorage: function() {
         localStorage.clear();
     }
 
-}
-
-// Create the ProductManager (I wanted a singleton but static values do not exist.)
-var myProductManager = new ProductManager(products);
+};
