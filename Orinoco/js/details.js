@@ -41,8 +41,23 @@ request.onreadystatechange = function () {
                 newPrice.classList.add("card-text");
                 newPrice.textContent = element.price / 100 + "€";
 
+                const newSelect = document.createElement("select");
+                newSelect.classList.add("custom-select");
+                const newSelectLabel = document.createElement("option");
+                newSelectLabel.setAttribute("selected", "Lentilles");
+                newSelectLabel.textContent = "Lentilles";
+                for (let i = 0; i < element.lenses.length; i++ ) {
+                    const newSelectOption = document.createElement("option");
+                    newSelectOption.setAttribute("value", element.lenses[i]);
+                    newSelectOption.textContent = element.lenses[i];
+                    newSelect.appendChild(newSelectOption);
+                    console.log(element.lenses[i]);
+                }
+                newSelect.appendChild(newSelectLabel);
+
                 newCardBody.appendChild(newCardTitle);
                 newCardBody.appendChild(newCardDescription);
+                newCardBody.appendChild(newSelect);
                 newCardBody.appendChild(newPrice);
                 newCardBody.appendChild(newAddToCart);
                 newCard.appendChild(newCardBody);
@@ -50,7 +65,11 @@ request.onreadystatechange = function () {
                 newDetails.appendChild(newCard);
 
                 newAddToCart.addEventListener("click", function () {
-                    productManager.addProduct(element);
+                    var myProduct = {};
+                    myProduct.id = element._id;
+                    myProduct.name = element.name;
+                    myProduct.price = element.price / 100; 
+                    localStorage.pushArrayItem("AddedToCart", myProduct);
                 });
             }
 

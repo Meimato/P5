@@ -15,8 +15,6 @@
     <title>Détails du Produit</title>
 </head>
 <body>
-    
-    <body>
         <header class="bg-dark my-font">
             <div class="container">
                 <div class="row">
@@ -43,12 +41,38 @@
                 </div>
             </div>
         </header>
-        <main class="container">
-            <div class="row">                
-                <div id="details"></div>
+        <main id="details" class="container card">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <h1 class="h1">Title</h1>
+                    </div>
+                    <div class="row">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa facere tempora officiis vel pariatur perspiciatis quidem recusandae iste beatae vitae tempore modi, illum officia sequi? Consequuntur nostrum enim expedita vero?</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <p>399€</p>
+                        </div>
+                        <div class="col-4">
+                            <select name="quantity" id="quantity">
+                                <option value="1">Qty. 1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary">Ajouter au panier</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <img class="img-fluid" src="#" alt="Photo du produit">
+                </div>
             </div>
         </main>
-        <footer class="bg-light fixed-bottom">
+        <footer class="bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col">
