@@ -13,9 +13,24 @@
 }
 
 #products, #details {
-    margin: 4rem auto;
+    margin: 0.2rem auto;
+}
+
+#details {    
+    margin-top: 2rem;
+    padding: 4rem;
 }
 
 .card {
-    margin: 0.25rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+aside.card {
+    padding: 2rem;
+    margin: 0;
+}
+
+#price, #lenses, #button {
+    padding-bottom: 2rem;
 }
