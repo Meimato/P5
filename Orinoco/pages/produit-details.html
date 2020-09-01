@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -21,21 +17,20 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap"
       rel="stylesheet"
     />
-    <title>Orinoco</title>
+    <title>Détails du Produit</title>
   </head>
-
   <body>
     <header class="bg-dark my-font">
       <div class="container">
         <div class="row">
           <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-              <a href="#" class="navbar-brand">
+            <nav class="d-flex navbar navbar-expand-lg navbar-dark">
+              <a href="../index.html" class="navbar-brand">
                 <i class="fa fa-2x fa-shopping-cart"></i>
                 <span>Orinoco</span>
               </a>
@@ -52,10 +47,10 @@
                 class="d-flex justify-content-end navbar-nav collapse navbar-collapse"
               >
                 <li class="nav-item active">
-                  <a href="index.html" class="nav-link">À propos de nous</a>
+                  <a href="../index.html" class="nav-link">À propos de nous</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./pages/panier.html" class="nav-link">Panier</a>
+                  <a href="./panier.html" class="nav-link">Panier</a>
                 </li>
               </ul>
             </nav>
@@ -63,17 +58,25 @@
         </div>
       </div>
     </header>
-    <main class="container">
+    <main id="details" class="container-fluid">
       <div class="row">
-        <div class="col-12 jumbotron text-center">
-          <h1 class="my-font">Orinoco</h1>
+        <div class="col-12 col-md-5" id="image"></div>
+        <div class="col-12 col-md-5">
+          <div class="row">
+            <div class="col-12 h1" id="title"></div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-justify text-info" id="description"></div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="d-lg-flex" id="products"></div>
+        <aside class="col-12 col-md-2 card">
+          <div id="price" class="text-danger"></div>
+          <div id="lenses"></div>
+          <div id="button"></div>
+        </aside>
       </div>
     </main>
-    <footer class="bg-light">
+    <footer class="bg-light" id="bottom">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -89,8 +92,8 @@
       </div>
     </footer>
 
-    <!-- Optional JavaScript -->
-    <script src="js/products.js"></script>
+    <script src="../js/product-manager.js"></script>
+    <script src="../js/details.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
