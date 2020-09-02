@@ -18,7 +18,15 @@ request.onreadystatechange = function () {
       myCartTable.appendChild(tr);
       total += myCart[i].price;
     }
-    console.log("The total is: " + total + "€");
+    let trTotal = document.createElement("tr");
+    let tdTotalName = document.createElement("td");
+    let tdTotalPrice = document.createElement("td");
+    tdTotalName.textContent = "Total"
+    tdTotalPrice.textContent = total;
+    trTotal.appendChild(tdTotalName);
+    trTotal.appendChild(tdTotalPrice);
+    trTotal.classList.add("font-weight-bold");
+    myCartTable.appendChild(trTotal);
   }
 };
 

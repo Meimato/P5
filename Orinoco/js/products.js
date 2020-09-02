@@ -9,7 +9,8 @@ request.onreadystatechange = function () {
       const element = response[index];
 
       const newId = document.createElement("a");
-      newId.classList.add("card-link");
+      newId.classList.add("list-group-item");
+      newId.classList.add("list-group-item-action");
       const newQuery = "./pages/produit-details.html?" + element._id;
       newId.textContent = "Détails";
       newId.setAttribute("href", newQuery);
