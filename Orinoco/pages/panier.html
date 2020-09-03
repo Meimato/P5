@@ -60,7 +60,7 @@
       </div>
     </header>
     <main class="container">
-      <div class="row">
+      <div class="row mt-5">
         <div class="col">
           <table class="table table-striped table-dark table-hover">
             <thead class="font-weight-bold">
@@ -71,6 +71,41 @@
             </thead>
             <tbody id="panier"></tbody>
           </table>
+        </div>
+      </div>
+      <div class="row mt-5 card">
+        <div class="col">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputName">Nom</label>
+                <input required type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">Prénom</label>
+                <input required type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                <label for="inputAddress">Adresse</label>
+                <input required type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputCity">Ville</label>
+                <input required type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-row align-items-end">
+              <div class="form-group col-md-9">
+                <label for="inputEmail">Adresse Electronique</label>
+                <input required type="email" class="form-control" name="inputEmail" id="inputEmail">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Commander</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </main>
