@@ -1,3 +1,3 @@
 Redesigned the product page.
 
-Cart page is empty for now.
+Cart page is almost completed.
