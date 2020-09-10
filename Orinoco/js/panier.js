@@ -7,14 +7,18 @@ request.onreadystatechange = function () {
     let total = 0;
     for (let i = 0; i < myCart.length; i++ ) {
       let tr = document.createElement("tr");
-      let td = document.createElement("td");
-      let td2 = document.createElement("td");
+      let tdName = document.createElement("td");
+      let tdPrice = document.createElement("td");
+      let tdLenses = document.createElement("td");
       let productName = document.createTextNode(myCart[i].name);
       let productPrice = document.createTextNode(myCart[i].price);
-      td.appendChild(productName);
-      td2.appendChild(productPrice);
-      tr.appendChild(td);
-      tr.appendChild(td2);
+      let productLenses = document.createTextNode(myCart[i].lenses);
+      tdName.appendChild(productName);
+      tdPrice.appendChild(productPrice);
+      tdLenses.appendChild(productLenses);
+      tr.appendChild(tdName);
+      tr.appendChild(tdLenses);
+      tr.appendChild(tdPrice);
       myCartTable.appendChild(tr);
       total += myCart[i].price;
     }
@@ -22,6 +26,7 @@ request.onreadystatechange = function () {
     let tdTotalName = document.createElement("td");
     let tdTotalPrice = document.createElement("td");
     tdTotalName.textContent = "Total"
+    tdTotalName.setAttribute("colspan", 2);
     tdTotalPrice.textContent = total;
     trTotal.appendChild(tdTotalName);
     trTotal.appendChild(tdTotalPrice);

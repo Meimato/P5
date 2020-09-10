@@ -69,6 +69,7 @@ request.onreadystatechange = function () {
           myProduct.id = element._id;
           myProduct.name = element.name;
           myProduct.price = element.price / 100;
+          myProduct.lenses = newSelect.options[newSelect.selectedIndex].value;
           localStorage.pushArrayItem("AddedToCart", myProduct);
         });
       }
