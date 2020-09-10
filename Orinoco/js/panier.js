@@ -44,6 +44,55 @@ request.onreadystatechange = function () {
     trTotal.classList.add("font-weight-bold");
     myCartTable.appendChild(trTotal);
 
+    function validate(e) {
+      var value = e.target.value;
+      if ( /^[A-Za-z]*$/.test(value)) {
+        console.log("Good Name");
+      } else {
+        console.log("Bad Character in your name");
+      }
+    }
+
+    let myInputName = document.getElementById("inputName");
+    myInputName.addEventListener( "input", function(e) {
+      var value = e.target.value;
+      if ( /^[A-Za-z]*$/.test(value)) {
+        console.log("Good Name");
+      } else {
+        console.log("Bad Character in your name");
+      }
+    });
+
+    let myInputFirstName = document.getElementById("inputFirstName");
+   // myInputFirstName.addEventListener( "input", validate(myInputFirstName));
+    myInputFirstName.addEventListener( "input", function(e){
+      var value = e.target.value;
+      if ( /^[A-Za-z]*$/.test(value)) {
+        console.log("Good Firstname");
+      } else {
+        console.log("Bad Character in your Firstname");
+      }
+    });
+
+    let myInputAddress = document.getElementById("inputAddress");
+    myInputAddress.addEventListener("input", function (e) {
+      var value = e.target.value;
+      if ( /^[A-Za-z0-9\s,-.]*$/.test(value)) {
+        console.log("Good Address");
+      } else {
+        console.log("Bad Character in your Address");
+      }
+    });
+
+    let myInputCity = document.getElementById("inputCity");
+    myInputCity.addEventListener( "input", function(e){
+       var value = e.target.value;
+       if ( /^[A-Za-z]*$/.test(value)) {
+         console.log("Good City");
+       } else {
+         console.log("Bad Character in your City");
+       }
+     });
   }
 };
 
