@@ -31,7 +31,7 @@ aside.card {
     margin: 0;
 }
 
-#products>.card {
+#products>.card, .rounded-borders {
     border-radius: 1rem;
 }
 
@@ -44,4 +44,8 @@ aside.card {
 
 #price, #lenses, #button {
     padding-bottom: 2rem;
+}
+
+.minimum-size {
+    width: 1%;
 }

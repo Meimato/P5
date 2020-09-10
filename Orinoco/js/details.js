@@ -34,8 +34,10 @@ request.onreadystatechange = function () {
         newCardDescription.classList.add("card-text");
         newCardDescription.textContent = element.description;
 
-        const newAddToCart = document.createElement("a");
-        newAddToCart.classList.add("card-link");
+        const newAddToCart = document.createElement("a");        
+        newAddToCart.classList.add("btn");
+        newAddToCart.classList.add("btn-outline-dark");
+        newAddToCart.classList.add("rounded-borders");
         newAddToCart.textContent = "Ajouter au panier";
 
         const newPrice = document.createElement("p");

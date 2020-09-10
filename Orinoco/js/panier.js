@@ -16,6 +16,7 @@ request.onreadystatechange = function () {
       let productPrice = document.createTextNode(myCart[i].price);
       let productLenses = document.createTextNode(myCart[i].lenses);
       tdRemoveItem.innerHTML = removeItemIcon;
+      tdRemoveItem.classList.add("minimum-size");
       tdName.appendChild(productName);
       tdPrice.appendChild(productPrice);
       tdLenses.appendChild(productLenses);
@@ -26,7 +27,7 @@ request.onreadystatechange = function () {
       myCartTable.appendChild(tr);
       total += myCart[i].price;
       tdRemoveItem.addEventListener( "click", function(){
-        console.log("removed: " + myCart[i].id + " @: " + i);
+        console.log("removed: " + myCart[i].id + " @index: " + i);
         localStorage.removeArrayItem("AddedToCart", i);
         location.reload();
       });
