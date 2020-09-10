@@ -44,3 +44,9 @@ Storage.prototype.unshiftArrayItem = function (arrayName, arrayItem) {
 Storage.prototype.deleteArray = function (arrayName) {
   this.removeItem(arrayName);
 };
+
+Storage.prototype.removeArrayItem = function (arrayName, arrayItemIndex) {
+  var existingArray = this.getArray(arrayName);
+  existingArray.splice(arrayItemIndex, 1);
+  this.setItem(arrayName, JSON.stringify(existingArray));
+};
