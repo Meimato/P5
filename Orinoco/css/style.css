@@ -31,6 +31,17 @@ aside.card {
     margin: 0;
 }
 
+#products>.card {
+    border-radius: 1rem;
+}
+
+#products>.card:hover {
+    transition: all 0.2s;
+    margin-top: -0.25rem;
+    background-color: #f3e9f1;
+    color: black;
+}
+
 #price, #lenses, #button {
     padding-bottom: 2rem;
 }

@@ -12,7 +12,7 @@ request.onreadystatechange = function () {
       newId.classList.add("list-group-item");
       newId.classList.add("list-group-item-action");
       const newQuery = "./pages/produit-details.html?" + element._id;
-      newId.textContent = "Détails";
+      newId.textContent = "En savoir plus";
       newId.setAttribute("href", newQuery);
 
       const newCard = document.createElement("div");
