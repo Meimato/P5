@@ -49,3 +49,8 @@ aside.card {
 .minimum-size {
     width: 1%;
 }
+
+.list-inline-item {
+    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+}

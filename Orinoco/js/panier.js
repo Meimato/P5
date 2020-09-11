@@ -6,7 +6,7 @@ request.onreadystatechange = function () {
     const myCart = localStorage.getArray("AddedToCart");
     let total = 0;
     const removeItemIcon = '<i class="fa fa-trash"></i>';
-    for (let i = 0; i < myCart.length; i++ ) {
+    for (let i = 0; i < myCart.length; i++) {
       let tr = document.createElement("tr");
       let tdName = document.createElement("td");
       let tdPrice = document.createElement("td");
@@ -26,7 +26,7 @@ request.onreadystatechange = function () {
       tr.appendChild(tdRemoveItem);
       myCartTable.appendChild(tr);
       total += myCart[i].price;
-      tdRemoveItem.addEventListener( "click", function(){
+      tdRemoveItem.addEventListener("click", function () {
         console.log("removed: " + myCart[i].id + " @index: " + i);
         localStorage.removeArrayItem("AddedToCart", i);
         location.reload();
@@ -35,7 +35,7 @@ request.onreadystatechange = function () {
     let trTotal = document.createElement("tr");
     let tdTotalName = document.createElement("td");
     let tdTotalPrice = document.createElement("td");
-    tdTotalName.textContent = "Total"
+    tdTotalName.textContent = "Total";
     tdTotalName.setAttribute("colspan", 2);
     tdTotalPrice.textContent = total;
     tdTotalPrice.setAttribute("colspan", 2);
@@ -44,9 +44,16 @@ request.onreadystatechange = function () {
     trTotal.classList.add("font-weight-bold");
     myCartTable.appendChild(trTotal);
 
+    let myEmptyCart = document.getElementById("empty-cart");
+    myEmptyCart.addEventListener("click", function () {
+      console.log("The cart is now empty!");
+      localStorage.deleteArray("AddedToCart");
+      location.reload();
+    });
+
     function validate(e) {
       var value = e.target.value;
-      if ( /^[A-Za-z]*$/.test(value)) {
+      if (/^[A-Za-z]*$/.test(value)) {
         console.log("Good Name");
       } else {
         console.log("Bad Character in your name");
@@ -54,9 +61,9 @@ request.onreadystatechange = function () {
     }
 
     let myInputName = document.getElementById("inputName");
-    myInputName.addEventListener( "input", function(e) {
+    myInputName.addEventListener("input", function (e) {
       var value = e.target.value;
-      if ( /^[A-Za-z]*$/.test(value)) {
+      if (/^[A-Za-z]*$/.test(value)) {
         console.log("Good Name");
       } else {
         console.log("Bad Character in your name");
@@ -64,10 +71,10 @@ request.onreadystatechange = function () {
     });
 
     let myInputFirstName = document.getElementById("inputFirstName");
-   // myInputFirstName.addEventListener( "input", validate(myInputFirstName));
-    myInputFirstName.addEventListener( "input", function(e){
+    // myInputFirstName.addEventListener( "input", validate(myInputFirstName));
+    myInputFirstName.addEventListener("input", function (e) {
       var value = e.target.value;
-      if ( /^[A-Za-z]*$/.test(value)) {
+      if (/^[A-Za-z]*$/.test(value)) {
         console.log("Good Firstname");
       } else {
         console.log("Bad Character in your Firstname");
@@ -77,7 +84,7 @@ request.onreadystatechange = function () {
     let myInputAddress = document.getElementById("inputAddress");
     myInputAddress.addEventListener("input", function (e) {
       var value = e.target.value;
-      if ( /^[A-Za-z0-9\s,-.]*$/.test(value)) {
+      if (/^[A-Za-z0-9\s,-.]*$/.test(value)) {
         console.log("Good Address");
       } else {
         console.log("Bad Character in your Address");
@@ -85,14 +92,14 @@ request.onreadystatechange = function () {
     });
 
     let myInputCity = document.getElementById("inputCity");
-    myInputCity.addEventListener( "input", function(e){
-       var value = e.target.value;
-       if ( /^[A-Za-z]*$/.test(value)) {
-         console.log("Good City");
-       } else {
-         console.log("Bad Character in your City");
-       }
-     });
+    myInputCity.addEventListener("input", function (e) {
+      var value = e.target.value;
+      if (/^[A-Za-z]*$/.test(value)) {
+        console.log("Good City");
+      } else {
+        console.log("Bad Character in your City");
+      }
+    });
   }
 };
 

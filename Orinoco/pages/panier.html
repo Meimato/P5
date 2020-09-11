@@ -27,7 +27,7 @@
   <body></body>
   <body>
     <header class="bg-dark my-font">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col">
             <nav class="d-flex navbar navbar-expand-lg navbar-dark">
@@ -68,7 +68,8 @@
               <tr>
                 <th>Produit</th>
                 <th>Lenses</th>
-                <th colspan="2">Prix</th>
+                <th>Prix</th>
+                <th class="text-danger minimum-size" id="empty-cart">X</th>
               </tr>
             </thead>
             <tbody id="panier"></tbody>
@@ -111,8 +112,8 @@
         </div>
       </div>
     </main>
-    <footer class="bg-light" id="bottom">
-      <div class="container">
+    <footer class="bg-light">
+      <div class="container-fluid">
         <div class="row">
           <div class="col">
             <ul class="list-inline text-center">
