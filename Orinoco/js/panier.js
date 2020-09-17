@@ -54,32 +54,17 @@ request.onreadystatechange = function () {
     function validate(e) {
       var value = e.target.value;
       if (/^[A-Za-z]*$/.test(value)) {
-        console.log("Good Name");
+        console.log("Good Input");
       } else {
-        console.log("Bad Character in your name");
+        console.log("Please insert a valid input");
       }
     }
 
     let myInputName = document.getElementById("inputName");
-    myInputName.addEventListener("input", function (e) {
-      var value = e.target.value;
-      if (/^[A-Za-z]*$/.test(value)) {
-        console.log("Good Name");
-      } else {
-        console.log("Bad Character in your name");
-      }
-    });
+    myInputName.addEventListener("input", validate);
 
     let myInputFirstName = document.getElementById("inputFirstName");
-    // myInputFirstName.addEventListener( "input", validate(myInputFirstName));
-    myInputFirstName.addEventListener("input", function (e) {
-      var value = e.target.value;
-      if (/^[A-Za-z]*$/.test(value)) {
-        console.log("Good Firstname");
-      } else {
-        console.log("Bad Character in your Firstname");
-      }
-    });
+    myInputFirstName.addEventListener( "input", validate);
 
     let myInputAddress = document.getElementById("inputAddress");
     myInputAddress.addEventListener("input", function (e) {
@@ -87,19 +72,17 @@ request.onreadystatechange = function () {
       if (/^[A-Za-z0-9\s,-.]*$/.test(value)) {
         console.log("Good Address");
       } else {
-        console.log("Bad Character in your Address");
+        console.log("Please insert a valid input");
       }
     });
 
     let myInputCity = document.getElementById("inputCity");
-    myInputCity.addEventListener("input", function (e) {
-      var value = e.target.value;
-      if (/^[A-Za-z]*$/.test(value)) {
-        console.log("Good City");
-      } else {
-        console.log("Bad Character in your City");
-      }
-    });
+    myInputCity.addEventListener("input", validate);
+
+    function validateForm() {
+      alert("not working");
+      return false;
+    }
   }
 };
 
