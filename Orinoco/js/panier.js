@@ -51,6 +51,43 @@ request.onreadystatechange = function () {
       location.reload();
     });
 
+    let myFormValidation = document.getElementById("myForm");
+    myFormValidation.addEventListener( "submit", function( event ) {
+
+      // event.preventDefault();
+
+      let tmp = localStorage.getArray("AddedToCart");
+      let products = [];
+      for ( let i = 0; i < tmp.length; i ++ ) {
+        products.push(tmp[i].id);
+      }
+
+      let myOrder = {
+        "contact": {
+          "firstName" : myFormValidation["inputFirstName"].value,
+          "lastName" : myFormValidation["inputName"].value,
+          "address" : myFormValidation["inputAddress"].value,
+          "city" : myFormValidation["inputCity"].value,
+          "email" : myFormValidation["inputEmail"].value
+        },
+      
+        "products": products
+      }
+      console.log(myOrder);
+
+/*    FIRST TRY   
+      myOrder.contact.firstName = myFormValidation["inputFirstName"].value;
+      myOrder.contact.lastName = myFormValidation["inputName"].value;
+      myOrder.contact.address = myFormValidation["inputAddress"].value;
+      myOrder.contact.address = myFormValidation["inputCity"].value;
+      myOrder.contact.email = myFormValidation["inputEmail"].value;
+      myOrder.products = localStorage.getArray("AddedToCart").filter(( e )=>{ e.id }); */
+
+      var request = new XMLHttpRequest();
+      request.open("POST", "http://localhost:3000/api/cameras/order");
+      request.setRequestHeader("Content-Type", "application/json");
+      request.send(JSON.stringify(myOrder));
+    });
   }
 };
 
