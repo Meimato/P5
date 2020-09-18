@@ -51,38 +51,6 @@ request.onreadystatechange = function () {
       location.reload();
     });
 
-    function validate(e) {
-      var value = e.target.value;
-      if (/^[A-Za-z]*$/.test(value)) {
-        console.log("Good Input");
-      } else {
-        console.log("Please insert a valid input");
-      }
-    }
-
-    let myInputName = document.getElementById("inputName");
-    myInputName.addEventListener("input", validate);
-
-    let myInputFirstName = document.getElementById("inputFirstName");
-    myInputFirstName.addEventListener( "input", validate);
-
-    let myInputAddress = document.getElementById("inputAddress");
-    myInputAddress.addEventListener("input", function (e) {
-      var value = e.target.value;
-      if (/^[A-Za-z0-9\s,-.]*$/.test(value)) {
-        console.log("Good Address");
-      } else {
-        console.log("Please insert a valid input");
-      }
-    });
-
-    let myInputCity = document.getElementById("inputCity");
-    myInputCity.addEventListener("input", validate);
-
-    function validateForm() {
-      alert("not working");
-      return false;
-    }
   }
 };
 
