@@ -54,8 +54,6 @@ request.onreadystatechange = function () {
     let myFormValidation = document.getElementById("myForm");
     myFormValidation.addEventListener( "submit", function( event ) {
 
-      // event.preventDefault();
-
       let tmp = localStorage.getArray("AddedToCart");
       let products = [];
       for ( let i = 0; i < tmp.length; i ++ ) {
@@ -64,15 +62,15 @@ request.onreadystatechange = function () {
 
       let myOrder = {
         "contact": {
-          "firstName" : myFormValidation["inputFirstName"].value,
-          "lastName" : myFormValidation["inputName"].value,
-          "address" : myFormValidation["inputAddress"].value,
-          "city" : myFormValidation["inputCity"].value,
-          "email" : myFormValidation["inputEmail"].value
+          "firstName" : myFormValidation["firstName"].value,
+          "lastName" : myFormValidation["lastName"].value,
+          "address" : myFormValidation["address"].value,
+          "city" : myFormValidation["city"].value,
+          "email" : myFormValidation["email"].value
         },
       
         "products": products
-      }
+      };
       console.log(myOrder);
 
 /*    FIRST TRY   
