@@ -73,6 +73,7 @@ request.onreadystatechange = function () {
           myProduct.price = element.price / 100;
           myProduct.lenses = newSelect.options[newSelect.selectedIndex].value;
           localStorage.pushArrayItem("AddedToCart", myProduct);
+          $(".toast").toast("show");
         });
       }
     }
