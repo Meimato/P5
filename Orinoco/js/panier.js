@@ -52,37 +52,45 @@ request.onreadystatechange = function () {
     });
 
     let myFormValidation = document.getElementById("myForm");
-    myFormValidation.addEventListener( "submit", function( event ) {
-
+    myFormValidation.addEventListener("submit", function (event) {
       event.preventDefault();
 
       let tmp = localStorage.getArray("AddedToCart");
       let products = [];
-      for ( let i = 0; i < tmp.length; i ++ ) {
+      for (let i = 0; i < tmp.length; i++) {
         products.push(tmp[i].id);
       }
 
       let myOrder = {
-        "contact": {
-          "firstName" : myFormValidation["firstName"].value,
-          "lastName" : myFormValidation["lastName"].value,
-          "address" : myFormValidation["address"].value,
-          "city" : myFormValidation["city"].value,
-          "email" : myFormValidation["email"].value
+        contact: {
+          firstName: myFormValidation["firstName"].value,
+          lastName: myFormValidation["lastName"].value,
+          address: myFormValidation["address"].value,
+          city: myFormValidation["city"].value,
+          email: myFormValidation["email"].value,
         },
-      
-        "products": products
+
+        products: products,
       };
       console.log(myOrder);
 
       var request = new XMLHttpRequest();
       request.open("POST", "http://localhost:3000/api/cameras/order");
-      request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-      request.responseType = 'json';
+      request.setRequestHeader(
+        "Content-Type",
+        "application/json; charset=utf-8"
+      );
+      request.responseType = "json";
       request.send(JSON.stringify(myOrder));
       request.onload = () => {
         alert(request.response.orderId);
-        const newQuery = "./confirmation-commande.html?orderid=" + request.response.orderId + "&firstname=" + myFormValidation["firstName"].value +"&total=" + total;
+        const newQuery =
+          "./confirmation-commande.html?orderid=" +
+          request.response.orderId +
+          "&firstname=" +
+          myFormValidation["firstName"].value +
+          "&total=" +
+          total;
         window.location.href = newQuery;
       };
     });
