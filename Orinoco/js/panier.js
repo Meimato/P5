@@ -54,6 +54,8 @@ request.onreadystatechange = function () {
     let myFormValidation = document.getElementById("myForm");
     myFormValidation.addEventListener( "submit", function( event ) {
 
+      event.preventDefault();
+
       let tmp = localStorage.getArray("AddedToCart");
       let products = [];
       for ( let i = 0; i < tmp.length; i ++ ) {
@@ -76,7 +78,13 @@ request.onreadystatechange = function () {
       var request = new XMLHttpRequest();
       request.open("POST", "http://localhost:3000/api/cameras/order");
       request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+      request.responseType = 'json';
       request.send(JSON.stringify(myOrder));
+      request.onload = () => {
+        alert(request.response.orderId);
+        const newQuery = "./confirmation-commande.html?orderid=" + request.response.orderId + "&firstname=" + myFormValidation["firstName"].value +"&total=" + total;
+        window.location.href = newQuery;
+      };
     });
   }
 };
