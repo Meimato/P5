@@ -83,6 +83,7 @@ request.onreadystatechange = function () {
       request.responseType = "json";
       request.send(JSON.stringify(myOrder));
       request.onload = () => {
+        // if (this.readyState == XMLHttpRequest.DONE && this.status == 201) { Should I write this line of code?!
         alert(request.response.orderId);
         const newQuery =
           "./confirmation-commande.html?orderid=" +
