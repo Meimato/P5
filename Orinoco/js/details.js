@@ -6,7 +6,6 @@ var makeServerRequest = fetch("http://localhost:3000/api/cameras").then(
       var myTitle = document.getElementById("title");
       var myDescription = document.getElementById("description");
       var myPrice = document.getElementById("price");
-      var myQuantity = document.getElementById("quantity");
       var myLenses = document.getElementById("lenses");
       var myButton = document.getElementById("button");
       var myImage = document.getElementById("image");
