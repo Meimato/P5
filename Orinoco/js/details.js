@@ -2,7 +2,6 @@ loadDetails((product) => {
   showProductDetails(product);
 });
 
-
 function loadDetails(callback) {
   fetch("http://localhost:3000/api/cameras/" + location.search.substr(1))
     .then((response) => response.json())
@@ -68,7 +67,7 @@ function showProductDetails(product) {
   newAddToCart.addEventListener("click", function () {
     var myProduct = {};
     myProduct.id = product._id;
-    myProduct.name = product.name;
+    myProduct.name =  product.name;
     myProduct.price = product.price / 100;
     myProduct.lenses = newSelect.options[newSelect.selectedIndex].value;
     localStorage.pushArrayItem("AddedToCart", myProduct);
