@@ -27,7 +27,7 @@ main {
 
 #products,
 #details {
-  margin: 0.2rem auto;
+  margin: 0 auto;
 }
 
 #myCarousel {
@@ -36,7 +36,6 @@ main {
 }
 
 #details {
-  margin-top: 2rem;
   padding: 4rem;
 }
 
