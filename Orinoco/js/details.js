@@ -40,7 +40,7 @@ function showProductDetails(product) {
 
   const newPrice = document.createElement("p");
   newPrice.classList.add("card-text");
-  newPrice.textContent = product.price / 100 + "€";
+  newPrice.textContent = centToEuro(product.price) + "€";
 
   const newSelect = document.createElement("select");
   newSelect.classList.add("custom-select");
@@ -64,13 +64,17 @@ function showProductDetails(product) {
   myDescription.appendChild(newCardBody);
   myImage.appendChild(newImage);
 
-  newAddToCart.addEventListener("click", function () {
+  newAddToCart.addEventListener("click", addProductToCart(product, newSelect));
+}
+
+function addProductToCart(product, newSelect) {
+  return function () {
     var myProduct = {};
     myProduct.id = product._id;
-    myProduct.name =  product.name;
-    myProduct.price = product.price / 100;
+    myProduct.name = product.name;
+    myProduct.price = centToEuro(product.price);
     myProduct.lenses = newSelect.options[newSelect.selectedIndex].value;
     localStorage.pushArrayItem("AddedToCart", myProduct);
     $(".toast").toast("show");
-  });
+  };
 }

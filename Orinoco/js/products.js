@@ -1,5 +1,5 @@
 loadProducts((products) => {
-  products.forEach(createProduct);
+  products.forEach(createCardProduct);
 });
 
 function loadProducts(callback) {
@@ -8,11 +8,7 @@ function loadProducts(callback) {
     .then(callback);
 }
 
-function unitToEuro(unit) {
-  return unit / 100 + "€";
-}
-
-function createProduct(product) {
+function createCardProduct(product) {
   const productsElement = document.getElementById("products");
 
   const newId = document.createElement("a");
@@ -44,7 +40,7 @@ function createProduct(product) {
 
   const newPrice = document.createElement("p");
   newPrice.classList.add("card-text");
-  newPrice.textContent = unitToEuro(product.price);
+  newPrice.textContent = centToEuro(product.price) + "€";
 
   newCardBody.appendChild(newCardTitle);
   newCardBody.appendChild(newCardDescription);

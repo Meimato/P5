@@ -1,9 +1,15 @@
 let total = 0;
-drawTable();
+drawTable(localStorage.getArray("AddedToCart"));
 
-function drawTable() {
+let myEmptyCart = document.getElementById("empty-cart");
+myEmptyCart.addEventListener("click", emptyCart);
+
+let myFormValidation = document.getElementById("myForm");
+myFormValidation.addEventListener("submit", sendInfo);
+
+
+function drawTable(myCart) {
   const myCartTable = document.getElementById("panier");
-  const myCart = localStorage.getArray("AddedToCart");
   const removeItemIcon = '<i class="fa fa-trash"></i>';
   for (let i = 0; i < myCart.length; i++) {
     let tr = document.createElement("tr");
@@ -87,9 +93,3 @@ function emptyCart() {
   localStorage.deleteArray("AddedToCart");
   location.reload();
 }
-
-let myEmptyCart = document.getElementById("empty-cart");
-myEmptyCart.addEventListener("click", emptyCart);
-
-let myFormValidation = document.getElementById("myForm");
-myFormValidation.addEventListener("submit", sendInfo);
