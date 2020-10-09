@@ -1,3 +1,3 @@
 function centToEuro(unit) {
-  return unit / 100;
+    return unit / 100;
 }

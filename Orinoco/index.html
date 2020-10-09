@@ -15,23 +15,30 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Merienda Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Animate on scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <title>Orinoco</title>
   </head>
 
   <body>
+    <!-- Header with navigation bar -->
     <header class="bg-dark my-font">
       <div class="container-fluid">
         <div class="row">
@@ -65,15 +72,20 @@
         </div>
       </div>
     </header>
+
+    <!-- Main content of the pqgecontains a jumbotron, a carousel, a section with 2 columns, a product list, a registration form  -->
     <main class="container-fluid">
-      <div class="row">
+      <!-- Jumbotron -->
+      <section class="row">
         <div class="col-12 jumbotron text-center my-font mb-0">
           <h1>Orinoco</h1>
           <p class="pt-3 lead">
             Cameras de pointe avec le look & feel d'un appareil photo vintage
           </p>
         </div>
-      </div>
+      </section>
+
+      <!-- Carousel -->
       <section id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -144,6 +156,7 @@
         </a>
       </section>
 
+      <!-- About Us section -->
       <section class="row m-5 p-5">
         <div class="col-12 col-md-6">
           <img
@@ -163,6 +176,7 @@
         </div>
       </section>
 
+      <!-- Product list -->
       <section class="container">
         <h2 class="my-font text-center" data-aos="flip-up">
           Nous avons sélectionné les meilleures caméras du moment.
@@ -171,11 +185,13 @@
           <div class="d-lg-flex" id="products"></div>
         </div>
       </section>
+
+      <!-- Registration form (visible on tablet viewport or bigger) -->
       <section
         class="ov-hidden bg-dark position-relative m-5 p-5 d-none d-md-block"
         style="min-height: 100vh"
       >
-        <!--video component -->
+        <!-- Video component -->
         <video
           playsinline=""
           autoplay="true"
@@ -185,8 +201,11 @@
         >
           <source src="./videos/orinoco-camera.webm" type="video/webm" />
         </video>
+
+        <!-- Overlay-->
         <div class="bg-overlay"></div>
 
+        <!-- Form -->
         <div class="container position-relative">
           <div
             class="row d-flex justify-content-between pt-lg-5 align-items-center"
@@ -310,8 +329,11 @@
           </div>
         </div>
       </section>
+
       <!-- ajouter section mobile -->
     </main>
+
+    <!-- Footer with links -->
     <footer class="bg-light">
       <div class="container-fluid">
         <div class="row">
@@ -328,9 +350,10 @@
       </div>
     </footer>
 
-    <!-- Optional JavaScript -->
+    <!-- Custom JavaScript -->
     <script src="js/centToEuro.js"></script>
     <script src="js/products.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -347,6 +370,8 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Import and initialize Animate on Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

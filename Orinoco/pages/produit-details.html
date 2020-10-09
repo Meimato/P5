@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -17,14 +21,18 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Merienda Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap"
       rel="stylesheet"
     />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
     <title>Détails du Produit</title>
   </head>
   <body>
+    <!-- Header with navigation bar -->
     <header class="bg-dark my-font">
       <div class="container-fluid">
         <div class="row">
@@ -58,13 +66,14 @@
         </div>
       </div>
     </header>
-    <div aria-live="polite" aria-atomic="true">
+
+    <!-- Confirmation Toast -->
+    <div aria-live="polite" aria-atomic="true" class="position-fixed fixed-top mt-5 d-flex justify-content-center align-items-center" style="z-index: 1; min-width: 100%;">
       <div
         class="toast"
         role="status"
         aria-live="polite"
         aria-atomic="true"
-        style="position: fixed; top: 3rem; right: 2rem; z-index: 1"
         data-delay="2000"
       >
         <div class="toast-header">
@@ -81,12 +90,16 @@
         <div class="toast-body">Produit ajouté au panier.</div>
       </div>
     </div>
+
+    <!-- Main content of the page contains a video banner -->
     <main id="details" class="container-fluid">
+
+      <!-- Banner-->
       <section
         class="ov-hidden bg-dark position-relative mb-5 p-5 d-none d-md-block"
-        style="min-height: 20vh"
+        style="min-height: 20vh; margin-right: -1rem;"
       >
-        <!--video component -->
+        <!-- Video component -->
         <video
           playsinline=""
           autoplay="true"
@@ -94,10 +107,13 @@
           loop="true"
           poster="../images/choose-lens.jpg"
         >
-          <source src="../videos/orinoco-lenses.webm" type="video/webm" />
+          <source src="../videos/orinoco-lenses.webm" type="video/webm"/>
         </video>
+
+        <!-- Overlay -->
         <div class="bg-overlay"></div>
 
+        <!-- Banner text -->
         <div class="container position-relative">
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col text-center text-lg-left mb-5 mb-lg-0">
@@ -113,8 +129,11 @@
             </div>
           </div>
         </div>
+
       </section>
-      <div class="row">
+
+      <!-- This section contains the Product image, its title, its description and a card-->
+      <section class="row">
         <div class="col-12 col-md-3" id="image"></div>
         <div class="col-12 col-md-5">
           <div class="row">
@@ -125,13 +144,17 @@
           </div>
         </div>
 
+        <!-- This card contains the price, a selection to choose the lenses and the add to cart button-->
         <aside class="col-12 col-md-4 card">
           <div id="price" class="text-danger"></div>
           <div id="lenses"></div>
           <div id="button"></div>
         </aside>
-      </div>
+      </section>
+
     </main>
+
+    <!-- Footer with links -->
     <footer class="bg-light">
       <div class="container-fluid">
         <div class="row">
@@ -148,9 +171,11 @@
       </div>
     </footer>
 
+    <!-- Custom JavaScript -->
     <script src="../js/centToEuro.js"></script>
     <script src="../js/product-manager.js"></script>
     <script src="../js/details.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

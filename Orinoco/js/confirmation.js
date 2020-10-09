@@ -20,7 +20,7 @@ function getData(url) {
     let firstName = document.createTextNode(parameters.get("firstname"));
     let total = document.createTextNode(parameters.get("total"));
     let orderId = document.createTextNode(parameters.get("orderid"));
-    
+
     return { firstName, total, orderId };
 }
 
