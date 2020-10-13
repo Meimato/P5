@@ -1,6 +1,14 @@
+/*********/
+/* Fonts */
+/*********/
+
 .my-font {
   font-family: "Merienda One", cursive;
 }
+
+/**********/
+/* Colors */
+/**********/
 
 .fa-shopping-cart {
   background-image: linear-gradient(
@@ -12,7 +20,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-main {
+body {
   background: linear-gradient(0deg, #fff 0%, #f3e9f1 100%);
   background-blend-mode: normal;
 }
@@ -25,13 +33,13 @@ main {
   background: rgba(0, 0, 0, 0.7);
 }
 
-#products,
-#details {
-  margin: 0 auto;
-}
+/************************/
+/* Elements Positioning */
+/************************/
 
+#products,
+#details,
 #myCarousel {
-  width: 60%;
   margin: 0 auto;
 }
 
@@ -54,13 +62,6 @@ aside.card {
   border-radius: 1rem;
 }
 
-#products > .card:hover {
-  transition: all 0.2s;
-  margin-top: -0.25rem;
-  background-color: #f3e9f1;
-  color: black;
-}
-
 #price,
 #lenses,
 #button {
@@ -76,6 +77,21 @@ aside.card {
   vertical-align: -webkit-baseline-middle;
 }
 
+/**************/
+/* Animations */
+/**************/
+
+#products > .card:hover {
+  transition: all 0.2s;
+  margin-top: -0.25rem;
+  background-color: #f3e9f1;
+  color: black;
+}
+
+/********************************************************/
+/* video banner */ 
+/********************************************************/
+
 .bg-overlay {
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -89,12 +105,11 @@ aside.card {
 video {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -100;
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -106,4 +121,13 @@ video {
 
 .ov-hidden {
   overflow: hidden;
+}
+
+/********************************************************/
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+/********************************************************/
+@media (min-width:768px) {
+  #myCarousel {
+    max-width: 100%;
+  }
 }

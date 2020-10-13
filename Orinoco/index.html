@@ -73,15 +73,15 @@
       </div>
     </header>
 
-    <!-- Main content of the pqgecontains a jumbotron, a carousel, a section with 2 columns, a product list, a registration form  -->
-    <main class="container-fluid">
+    <!-- Main content of the page contains a jumbotron, a carousel, a section with 2 columns, a product list, a registration form  -->
+    <main class="container">
       <!-- Jumbotron -->
       <section class="row">
-        <div class="col-12 jumbotron text-center my-font mb-0">
+        <div class="col-12 jumbotron text-center my-font p-3 mb-3 mt-5">
           <h1>Orinoco</h1>
-          <p class="pt-3 lead">
+          <h2 class="pt-3 lead">
             Cameras de pointe avec le look & feel d'un appareil photo vintage
-          </p>
+          </h2>
         </div>
       </section>
 
@@ -157,7 +157,7 @@
       </section>
 
       <!-- About Us section -->
-      <section class="row m-5 p-5">
+      <section class="row my-5 m-md-5 p-md-5 text-center align-items-center">
         <div class="col-12 col-md-6">
           <img
             class="img-fluid"
@@ -166,30 +166,32 @@
             data-aos="fade-left"
           />
         </div>
-        <div class="col-12 col-md-6">
-          <p class="justify-content-center" data-aos="fade-up">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod neque
-            at aliquam molestiae id tenetur quis? Eaque quia, vel voluptate,
-            adipisci magni sequi, numquam animi temporibus impedit commodi
-            fugiat at?
+        <div class="col-12 col-md-6" data-aos="fade-up">
+          <h2>Envie de vous démarquer ?</h2>
+          <p class="justify-content-center">
+            Seul l'Orinoco vous permet d'avoir un appareil photo personnalisé avec les composants des meilleurs caméras.
+          </p>
+          <p>
+            Nous avons soigneusement choisi nos partenaires afin de toujours fournir les meilleurs appareils photo du marché.
           </p>
         </div>
       </section>
 
       <!-- Product list -->
       <section class="container">
-        <h2 class="my-font text-center" data-aos="flip-up">
+        <h2 class="my-font text-center" data-aos="flip-up" 
+        data-aos-duration="1250">
           Nous avons sélectionné les meilleures caméras du moment.
         </h2>
         <div class="row">
-          <div class="d-lg-flex" id="products"></div>
+          <div class="d-lg-flex" id="products" data-aos="flip-left" 
+          data-aos-duration="1250"></div>
         </div>
       </section>
 
       <!-- Registration form (visible on tablet viewport or bigger) -->
       <section
-        class="ov-hidden bg-dark position-relative m-5 p-5 d-none d-md-block"
-        style="min-height: 100vh"
+        class="ov-hidden bg-dark position-relative my-5 p-2 d-none d-md-block"
       >
         <!-- Video component -->
         <video
@@ -208,15 +210,19 @@
         <!-- Form -->
         <div class="container position-relative">
           <div
-            class="row d-flex justify-content-between pt-lg-5 align-items-center"
+            class="row d-flex justify-content-between p-lg-5 align-items-center"
           >
             <div
-              class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0"
+              class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0" data-aos="fade-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-delay="500"
+              data-aos-duration="300"
+              data-aos-anchor-placement="bottom-center"
             >
-              <h1 class="display-3 font-weight-bold text-white">
-                Dix trucs et astuces pour de vraies photos d'artistes
-              </h1>
-              <div class="my-4" data-aos="fade-up">
+              <h2 class="display-3 font-weight-bold text-white">
+                Dix astuces pour de vraies photos d'artistes
+              </h2>
+              <div class="my-4">
                 <p class="lead text-white">
                   Recevez un bulletin toutes les semaines pour améliorer vos
                   photos.
@@ -237,7 +243,11 @@
                 >
               </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-delay="2000"
+              data-aos-duration="300"
+              data-aos-anchor-placement="bottom-center">
               <div class="row justify-content-center">
                 <div class="col-xl-8 col-md-10">
                   <form class="position-relative d-block">
