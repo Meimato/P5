@@ -32,6 +32,7 @@ function createCardProduct(product) {
 
   const newCardTitle = document.createElement("div");
   newCardTitle.classList.add("card-title");
+  newCardTitle.classList.add("font-weight-bold");
   newCardTitle.textContent = product.name;
 
   const newCardDescription = document.createElement("p");
