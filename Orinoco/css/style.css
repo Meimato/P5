@@ -21,8 +21,12 @@
 }
 
 body {
-  background: linear-gradient(0deg, #fff 0%, #f3e9f1 100%);
+  background: linear-gradient(0deg, #ddfcf8 0%, #f3e9f1 90%);
   background-blend-mode: normal;
+}
+
+.my-color {
+  color: #F8CFA5;
 }
 
 .jumbotron {
@@ -31,6 +35,10 @@ body {
 
 .carousel-caption {
   background: rgba(0, 0, 0, 0.7);
+}
+
+footer {
+  border-top: 1rem solid #F8CFA5;
 }
 
 /************************/
@@ -84,7 +92,7 @@ aside.card {
 #products > .card:hover {
   transition: all 0.2s;
   margin-top: -0.25rem;
-  background-color: #f3e9f1;
+  background-color: #F3E9F1;
   color: black;
 }
 
