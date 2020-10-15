@@ -85,16 +85,14 @@ function sendInfo(event) {
   request.responseType = "json";
   request.send(JSON.stringify(myOrder));
   request.onload = () => {
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
-      const newQuery =
-        "./confirmation-commande.html?orderid=" +
-        request.response.orderId +
-        "&firstname=" +
-        myFormValidation["firstName"].value +
-        "&total=" +
-        total;
-      window.location.href = newQuery;
-    }
+    const newQuery =
+      "./confirmation-commande.html?orderid=" +
+      request.response.orderId +
+      "&firstname=" +
+      myFormValidation["firstName"].value +
+      "&total=" +
+      total;
+    window.location.href = newQuery;
   };
 }
 
