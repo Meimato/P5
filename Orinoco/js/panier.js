@@ -7,7 +7,11 @@ myEmptyCart.addEventListener("click", emptyCart);
 let myFormValidation = document.getElementById("myForm");
 myFormValidation.addEventListener("submit", sendInfo);
 
-
+/**
+ * Draws the table containing the cart.
+ *
+ * @param {Array} myCart The array containing all products.
+ */
 function drawTable(myCart) {
   const myCartTable = document.getElementById("panier");
   const removeItemIcon = '<i class="fa fa-trash"></i>';
@@ -32,7 +36,6 @@ function drawTable(myCart) {
     myCartTable.appendChild(tr);
     total += myCart[i].price;
     tdRemoveItem.addEventListener("click", function () {
-      console.log("removed: " + myCart[i].id + " @index: " + i);
       localStorage.removeArrayItem("AddedToCart", i);
       location.reload();
     });
@@ -50,6 +53,11 @@ function drawTable(myCart) {
   myCartTable.appendChild(trTotal);
 }
 
+/**
+ * Makes a POST request when the order is submitted.
+ *
+ * @param {Event} event The Event interface used to block the default behavior.
+ */
 function sendInfo(event) {
   event.preventDefault();
 
@@ -77,18 +85,22 @@ function sendInfo(event) {
   request.responseType = "json";
   request.send(JSON.stringify(myOrder));
   request.onload = () => {
-    // if (this.readyState == XMLHttpRequest.DONE && this.status == 201) { Should I write this line of code?!
-    const newQuery =
-      "./confirmation-commande.html?orderid=" +
-      request.response.orderId +
-      "&firstname=" +
-      myFormValidation["firstName"].value +
-      "&total=" +
-      total;
-    window.location.href = newQuery;
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
+      const newQuery =
+        "./confirmation-commande.html?orderid=" +
+        request.response.orderId +
+        "&firstname=" +
+        myFormValidation["firstName"].value +
+        "&total=" +
+        total;
+      window.location.href = newQuery;
+    }
   };
 }
 
+/**
+ * Empty the cart and reload the page.
+ */
 function emptyCart() {
   localStorage.deleteArray("AddedToCart");
   location.reload();

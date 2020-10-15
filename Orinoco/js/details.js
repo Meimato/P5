@@ -1,13 +1,35 @@
+/**
+ * Executes the showProductDetails function for the product object.
+ *
+ * @param {object} product The product object.
+ */
 loadDetails((product) => {
   showProductDetails(product);
 });
 
+/**
+ * GET request for a specific product that formats the response in JSON format and then calls the callback.
+ *
+ * @param {function} callback The function to be called after the GET request.
+ */
 function loadDetails(callback) {
   fetch("http://localhost:3000/api/cameras/" + location.search.substr(1))
     .then((response) => response.json())
     .then(callback);
 }
 
+/**
+ * Draws the product detail:
+ *  - title
+ *  - description
+ *  - price
+ *  - image
+ * with a card that contains:
+ *  - a select to choose the lenses
+ *  - a button to add the product to the cart.
+ *
+ * @param {object} product The product object.
+ */
 function showProductDetails(product) {
   const myTitle = document.getElementById("title");
   const myDescription = document.getElementById("description");
@@ -67,6 +89,12 @@ function showProductDetails(product) {
   newAddToCart.addEventListener("click", addProductToCart(product, newSelect));
 }
 
+/**
+ * Adds a product to the cart.
+ *
+ * @param {object} product The product object added to the Storage object.
+ * @param {HTMLSelectElement} newSelect The interface used to retrieve the lenses choice.
+ */
 function addProductToCart(product, newSelect) {
   return function () {
     var myProduct = {};

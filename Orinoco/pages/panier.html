@@ -27,6 +27,7 @@
   </head>
   <body></body>
   <body>
+    <!-- Header with navigation bar -->
     <header class="bg-dark my-font">
       <div class="container-fluid">
         <div class="row">
@@ -60,8 +61,10 @@
         </div>
       </div>
     </header>
+    <!-- Main content of the page contains a table of products in the cart and a form to complete the order-->
     <main class="container p-4">
       <div class="row mt-4">
+        <!-- Products in the cart -->
         <div class="col-12 col-md-6">
           <h1 class="my-3">Votre Panier</h1>
           <table
@@ -78,6 +81,7 @@
             <tbody id="panier"></tbody>
           </table>
         </div>
+        <!-- Order form-->
         <div class="card col-12 col-md-6 m-0">
           <form id="myForm">
             <div class="form-row">
@@ -153,38 +157,65 @@
       <div class="container bg-dark">
         <div class="row">
           <div class="col">
-            <header class="lead font-weight-bold text-white py-3 my-font"><h3 class="my-color">Contactez-nous</h3></header>
+            <header class="lead font-weight-bold text-white py-3 my-font">
+              <h3 class="my-color">Contactez-nous</h3>
+            </header>
             <form class="d-block">
               <div class="form-group">
-                <label for="contactUsName" class="text-white d-block">Votre nom complet</label>
-                <input type="text" name="contactUsName" id="contactUsName">
+                <label for="contactUsName" class="text-white d-block"
+                  >Votre nom complet</label
+                >
+                <input type="text" name="contactUsName" id="contactUsName" />
               </div>
               <div class="form-group">
-                <label for="contactUsEmail" class="text-white d-block">Adresse e-mail</label>
-                <input type="email" name="contactUsEmail" id="contactUsEmail">
+                <label for="contactUsEmail" class="text-white d-block"
+                  >Adresse e-mail</label
+                >
+                <input type="email" name="contactUsEmail" id="contactUsEmail" />
               </div>
               <div class="form-group">
-                <label for="contactUsMessage" class="text-white d-block">Votre Message</label>
-                <textarea name="contactUsMessage" id="contactUsMessage" cols="30" rows="3"></textarea>
+                <label for="contactUsMessage" class="text-white d-block"
+                  >Votre Message</label
+                >
+                <textarea
+                  name="contactUsMessage"
+                  id="contactUsMessage"
+                  cols="30"
+                  rows="3"
+                ></textarea>
               </div>
-              <button type="button" class="btn btn-outline-info">Send Message</button>
+              <button type="button" class="btn btn-outline-info">
+                Send Message
+              </button>
             </form>
           </div>
           <div class="col text-center">
-            <header class="lead font-weight-bold text-white py-3 my-font"><h3 class="my-color">Sitemap</h3></header>
+            <header class="lead font-weight-bold text-white py-3 my-font">
+              <h3 class="my-color">Sitemap</h3>
+            </header>
             <nav class="navbar justify-content-center">
               <ul class="navbar-nav">
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item"><a href="#">Panier</a></li>
-                <li class="nav-item"><a href="#">About Us</a></li>
+                <li class="nav-item">
+                  <a href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Panier</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">About Us</a>
+                </li>
               </ul>
             </nav>
           </div>
           <div class="col text-right my-color">
             <header class="lead font-weight-bold text-white py-3 my-font">
-              <i class="fa fa-3x fa-shopping-cart d-block"></i><h3 class="my-color">Orinoco</h3></header>
-            <span class="pr-3">(+33) 06 33 45 67 78</span><i class="fa fa-2x fa-phone-square"></i>
-            <span class="pr-3">orinoco@contact.us</span><i class="fa fa-2x fa-envelope-square"></i>  
+              <i class="fa fa-3x fa-shopping-cart d-block"></i>
+              <h3 class="my-color">Orinoco</h3>
+            </header>
+            <span class="pr-3">(+33) 06 33 45 67 78</span>
+            <i class="fa fa-2x fa-phone-square"></i>
+            <span class="pr-3">orinoco@contact.us</span>
+            <i class="fa fa-2x fa-envelope-square"></i>
           </div>
         </div>
       </div>

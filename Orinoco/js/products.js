@@ -1,13 +1,28 @@
+/**
+ * Executes the createCardProduct function for every product in the given array.
+ *
+ * @param {Array} products The array containing every product.
+ */
 loadProducts((products) => {
   products.forEach(createCardProduct);
 });
 
+/**
+ * GET request that formats the response in JSON format and then calls the callback.
+ *
+ * @param {function} callback The function to be called after the GET request.
+ */
 function loadProducts(callback) {
   fetch("http://localhost:3000/api/cameras")
     .then((response) => response.json())
     .then(callback);
 }
 
+/**
+ * Creates a Bootstrap card for the given product and appends the result into the DOM.
+ *
+ * @param {object} product The product object.
+ */
 function createCardProduct(product) {
   const productsElement = document.getElementById("products");
 
