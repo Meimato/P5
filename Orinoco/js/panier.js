@@ -8,7 +8,7 @@ let myFormValidation = document.getElementById("myForm");
 myFormValidation.addEventListener("submit", sendInfo);
 
 /**
- * Draws the table containing the cart.
+ * Draws a table containing all the products in the cart.
  *
  * @param {Array} myCart The array containing all products.
  */
@@ -97,7 +97,7 @@ function sendInfo(event) {
 }
 
 /**
- * Empty the cart and reload the page.
+ * Empties the cart and reload the page.
  */
 function emptyCart() {
   localStorage.deleteArray("AddedToCart");

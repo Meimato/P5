@@ -8,7 +8,7 @@ loadProducts((products) => {
 });
 
 /**
- * GET request that formats the response in JSON format and then calls the callback.
+ * Makes a GET request that formats the response in JSON format and then calls the callback.
  *
  * @param {function} callback The function to be called after the GET request.
  */

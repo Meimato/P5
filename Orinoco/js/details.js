@@ -8,7 +8,7 @@ loadDetails((product) => {
 });
 
 /**
- * GET request for a specific product that formats the response in JSON format and then calls the callback.
+ * Makes a GET request for a specific product that formats the response in JSON format and then calls the callback.
  *
  * @param {function} callback The function to be called after the GET request.
  */
@@ -74,7 +74,6 @@ function showProductDetails(product) {
     newSelectOption.setAttribute("value", product.lenses[i]);
     newSelectOption.textContent = product.lenses[i];
     newSelect.appendChild(newSelectOption);
-    console.log(product.lenses[i]);
   }
   newSelect.appendChild(newSelectLabel);
 
