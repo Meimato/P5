@@ -89,6 +89,10 @@ aside.card {
 /* Animations */
 /**************/
 
+html {
+  scroll-behavior: smooth;
+}
+
 #products > .card:hover {
   transition: all 0.2s;
   margin-top: -0.25rem;
